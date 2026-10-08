@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Newspaper } from 'lucide-react';
 
 interface ArticleImageProps {
@@ -16,21 +16,58 @@ export const ArticleImage: React.FC<ArticleImageProps> = ({
   aspectRatioClass = 'aspect-[16/10]',
   priority = false
 }) => {
+  const [currentSrc, setCurrentSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Sync currentSrc when src prop changes
+  useEffect(() => {
+    setCurrentSrc(src);
+    setHasError(false);
+    setIsLoaded(false);
+  }, [src]);
+
+  // Check if already completed (cached)
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, [currentSrc]);
+
+  const handleError = () => {
+    // If it started with /src/assets/images/, retry with /images/
+    if (currentSrc.includes('/src/assets/images/')) {
+      const filename = currentSrc.split('/').pop();
+      if (filename) {
+        setCurrentSrc(`/images/${filename}`);
+        return;
+      }
+    }
+    // If it was another path with filename, try /images/
+    if (!currentSrc.startsWith('/images/') && currentSrc.includes('.')) {
+      const filename = currentSrc.split('/').pop()?.split('?')[0];
+      if (filename) {
+        setCurrentSrc(`/images/${filename}`);
+        return;
+      }
+    }
+    setHasError(true);
+  };
 
   return (
     <div className={`relative overflow-hidden bg-[#ECE8DE] ${aspectRatioClass} ${className}`}>
       {!hasError ? (
         <img
-          src={src}
+          ref={imgRef}
+          src={currentSrc}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
-          referrerPolicy="no-referrer"
-          onError={() => setHasError(true)}
+          decoding="async"
+          onError={handleError}
           onLoad={() => setIsLoaded(true)}
-          className={`w-full h-full object-cover transition-all duration-700 ease-out ${
-            isLoaded ? 'opacity-100 scale-100 filter-none' : 'opacity-0 scale-105 blur-sm'
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
+            isLoaded ? 'opacity-100' : 'opacity-90'
           }`}
         />
       ) : (
@@ -46,3 +83,4 @@ export const ArticleImage: React.FC<ArticleImageProps> = ({
     </div>
   );
 };
+

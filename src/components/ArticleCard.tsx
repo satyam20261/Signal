@@ -2,6 +2,7 @@ import React from 'react';
 import { Bookmark, ArrowRight } from 'lucide-react';
 import { Article } from '../types/blog';
 import { ArticleImage } from './ArticleImage';
+import { AuthorAvatar } from './AuthorAvatar';
 
 interface ArticleCardProps {
   article: Article;
@@ -56,13 +57,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
 
           <div className="pt-2 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img
+              <AuthorAvatar
                 src={article.author.avatar}
-                alt={article.author.name}
-                className="w-8 h-8 rounded-full object-cover ring-1 ring-[#D8D2C4]"
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
+                name={article.author.name}
+                sizeClass="w-8 h-8"
               />
               <div className="text-xs">
                 <span className="font-medium text-[#1C1917] block">{article.author.name}</span>
@@ -182,13 +180,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
 
         <div className="pt-4 border-t border-[#F2ECE1] flex items-center justify-between text-xs">
           <div className="flex items-center gap-2">
-            <img
+            <AuthorAvatar
               src={article.author.avatar}
-              alt={article.author.name}
-              className="w-6 h-6 rounded-full object-cover ring-1 ring-[#D8D2C4]"
-              onError={(e) => {
-                (e.target as HTMLElement).style.display = 'none';
-              }}
+              name={article.author.name}
+              sizeClass="w-6 h-6"
             />
             <span className="text-[#44403C] font-medium truncate max-w-[120px]">
               {article.author.name}

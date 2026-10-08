@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AUTHORS } from '../data/articles';
+import { AuthorAvatar } from './AuthorAvatar';
 import { Check, Mail, Send, Sparkles, BookOpen, Target, ShieldCheck } from 'lucide-react';
 
 export const AboutView: React.FC = () => {
@@ -144,13 +145,10 @@ export const AboutView: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {Object.values(AUTHORS).map((author) => (
               <div key={author.id} className="p-6 bg-white border border-[#E8E2D5] rounded-sm flex items-start gap-4">
-                <img
+                <AuthorAvatar
                   src={author.avatar}
-                  alt={author.name}
-                  className="w-14 h-14 rounded-full object-cover ring-2 ring-[#E0DACD] shrink-0"
-                  onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
-                  }}
+                  name={author.name}
+                  sizeClass="w-14 h-14"
                 />
                 <div className="space-y-1">
                   <h3 className="font-serif text-lg font-bold text-[#1C1917]">{author.name}</h3>

@@ -1,4 +1,13 @@
 import { Article, Author } from '../types/blog';
+import heroImg from '../assets/images/hero_digital_marketing_ai_1791429557407.jpg';
+import aiFutureImg from '../assets/images/future_automation_brand_1791429606570.jpg';
+import seoImg from '../assets/images/ai_search_seo_2026_1791429578979.jpg';
+import contentImg from '../assets/images/content_intelligence_studio_1791429593549.jpg';
+import socialImg from '../assets/images/social_media_small_biz_1791430677468.jpg';
+import emailImg from '../assets/images/email_marketing_conversion_1791430689236.jpg';
+import adsImg from '../assets/images/ads_bidding_comparison_1791430702537.jpg';
+import brandImg from '../assets/images/personal_brand_online_1791430714977.jpg';
+import analyticsImg from '../assets/images/marketing_analytics_metrics_1791430726877.jpg';
 
 export const AUTHORS: Record<string, Author> = {
   elena_rostova: {
@@ -50,7 +59,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 3, 2026',
     readTime: '9 min read',
     featured: true,
-    featuredImage: '/src/assets/images/hero_digital_marketing_ai_1791429557407.jpg',
+    featuredImage: heroImg,
     imageAlt: 'Editorial desk showcasing modern digital marketing strategy blueprints and digital metrics',
     tags: ['Digital Marketing', 'Strategy', 'Beginner Guide', 'Marketing Channels'],
     keyTakeaways: [
@@ -131,7 +140,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 4, 2026',
     readTime: '11 min read',
     featured: true,
-    featuredImage: '/src/assets/images/future_automation_brand_1791429606570.jpg',
+    featuredImage: aiFutureImg,
     imageAlt: 'Visual rendering of generative neural marketing agents and real-time customer data pipelines',
     tags: ['Artificial Intelligence', 'Machine Learning', 'Automation', 'Marketing Tech'],
     keyTakeaways: [
@@ -202,7 +211,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 4, 2026',
     readTime: '12 min read',
     featured: true,
-    featuredImage: '/src/assets/images/ai_search_seo_2026_1791429578979.jpg',
+    featuredImage: seoImg,
     imageAlt: 'Conceptual photograph showing semantic search nodes, knowledge graphs, and algorithmic indexing',
     tags: ['SEO', 'Search Algorithms', 'AI Overviews', 'Entity SEO'],
     keyTakeaways: [
@@ -271,7 +280,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 4, 2026',
     readTime: '10 min read',
     featured: true,
-    featuredImage: '/src/assets/images/content_intelligence_studio_1791429593549.jpg',
+    featuredImage: contentImg,
     imageAlt: 'Strategist working in modern sunlit studio reviewing digital content frameworks and editorial calendars',
     tags: ['Content Marketing', 'AI Prompts', 'Editorial Workflow', 'Copywriting'],
     keyTakeaways: [
@@ -340,7 +349,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 5, 2026',
     readTime: '8 min read',
     featured: false,
-    featuredImage: '/src/assets/images/hero_digital_marketing_ai_1791429557407.jpg',
+    featuredImage: socialImg,
     imageAlt: 'Editorial flatlay of social media strategy board, phone previewing vertical video, and planner',
     tags: ['Social Media', 'Small Business', 'Organic Growth', 'Community'],
     keyTakeaways: [
@@ -408,7 +417,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 5, 2026',
     readTime: '10 min read',
     featured: false,
-    featuredImage: '/src/assets/images/content_intelligence_studio_1791429593549.jpg',
+    featuredImage: emailImg,
     imageAlt: 'Email campaign architecture diagram displayed on sleek workstation screen',
     tags: ['Email Marketing', 'Automation', 'Lifecycle', 'Conversion'],
     keyTakeaways: [
@@ -478,7 +487,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 6, 2026',
     readTime: '11 min read',
     featured: false,
-    featuredImage: '/src/assets/images/future_automation_brand_1791429606570.jpg',
+    featuredImage: adsImg,
     imageAlt: 'Analytical visualization comparing digital advertising performance metrics on multiple screens',
     tags: ['Google Ads', 'Meta Ads', 'Paid Acquisition', 'PPC', 'ROAS'],
     keyTakeaways: [
@@ -548,7 +557,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 6, 2026',
     readTime: '9 min read',
     featured: false,
-    featuredImage: '/src/assets/images/hero_digital_marketing_ai_1791429557407.jpg',
+    featuredImage: brandImg,
     imageAlt: 'Editorial portrait workspace showcasing modern personal brand publishing tools',
     tags: ['Personal Brand', 'Career Growth', 'LinkedIn', 'Thought Leadership'],
     keyTakeaways: [
@@ -613,7 +622,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 7, 2026',
     readTime: '10 min read',
     featured: false,
-    featuredImage: '/src/assets/images/ai_search_seo_2026_1791429578979.jpg',
+    featuredImage: analyticsImg,
     imageAlt: 'High-contrast visual of multi-touch attribution graphs and unit economic cohort tables',
     tags: ['Analytics', 'Attribution', 'CAC', 'LTV', 'Growth Metrics'],
     keyTakeaways: [
@@ -684,7 +693,7 @@ export const ARTICLES: Article[] = [
     publishedAt: 'October 7, 2026',
     readTime: '13 min read',
     featured: true,
-    featuredImage: '/src/assets/images/future_automation_brand_1791429606570.jpg',
+    featuredImage: aiFutureImg,
     imageAlt: 'Futuristic architectural visualization of automated marketing intelligence networks',
     tags: ['Future of Marketing', 'Hyper-Personalization', 'Autonomous Agents', 'Predictive AI'],
     keyTakeaways: [

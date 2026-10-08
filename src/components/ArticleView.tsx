@@ -16,6 +16,7 @@ import {
 import { Article } from '../types/blog';
 import { ArticleImage } from './ArticleImage';
 import { ArticleCard } from './ArticleCard';
+import { AuthorAvatar } from './AuthorAvatar';
 
 interface ArticleViewProps {
   article: Article;
@@ -229,13 +230,10 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
           {/* Author Byline */}
           <div className="flex items-center gap-3 pt-2">
-            <img
+            <AuthorAvatar
               src={article.author.avatar}
-              alt={article.author.name}
-              className="w-11 h-11 rounded-full object-cover ring-2 ring-[#E0DACD]"
-              onError={(e) => {
-                (e.target as HTMLElement).style.display = 'none';
-              }}
+              name={article.author.name}
+              sizeClass="w-11 h-11"
             />
             <div>
               <div className="text-sm font-semibold text-[#1C1917]">
@@ -432,13 +430,10 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
             {/* Author Masthead Box */}
             <div className="mt-16 p-6 sm:p-8 bg-[#F5F0E6] border border-[#E2DBD0] rounded-sm">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-                <img
+                <AuthorAvatar
                   src={article.author.avatar}
-                  alt={article.author.name}
-                  className="w-16 h-16 rounded-full object-cover ring-2 ring-[#CFC6B8]"
-                  onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
-                  }}
+                  name={article.author.name}
+                  sizeClass="w-16 h-16"
                 />
                 <div className="space-y-1">
                   <div className="text-xs font-semibold uppercase tracking-wider text-[#9A3412]">
