@@ -1,0 +1,8 @@
+{
+  "name": "Signal & Prompt — Digital Marketing & AI Publication",
+  "description": "A premier editorial publication delivering deep guides and strategic playbooks on digital marketing, generative AI, search optimization, and modern brand growth.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
